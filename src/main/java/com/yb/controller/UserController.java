@@ -7,10 +7,7 @@ import javax.annotation.Resource;
 import com.yb.entity.User;
 import com.yb.service.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -43,6 +40,13 @@ public class UserController {
     @RequestMapping("/layout")
     public String getUserPartialPage() {
         return "users/layout";
+    }
+
+    @RequestMapping("/login")
+    @ResponseBody
+    public String login(@RequestParam String userName,@RequestParam String password){
+
+	    return "sucess";
     }
 	
 }
